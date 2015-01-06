@@ -1,0 +1,69 @@
+#N canvas 481 87 1321 864 10;
+#X obj 416 56 inlet;
+#X obj 416 91 unpack f f;
+#X obj 416 202 mtof;
+#X obj 405 437 *~;
+#X floatatom 368 137 5 0 0 0 - - -;
+#X text 292 137 note number;
+#X floatatom 518 137 5 0 0 0 - - -;
+#X text 557 138 velocity;
+#X obj 473 385 outlet;
+#X obj 473 355 != 0;
+#X text 52 238 Messages sent to audio inlets will only update at block
+boundaries. So \, if you use a [vline~] envelope (which updates between
+blocks) \, you'll want to use [vline~] to update the frequency as well.
+;
+#X text 694 26 This is just a simple sinewave voice with an ASR envelope.
+Each voice is a copy of the same subpatch. You can \, of course \,
+use abstractions as well \, particularly if you want to use creations
+arguments or \$0. The right outlet sends out 1 if it is active and
+0 if it is not \, for illustrative purposes.;
+#X text 789 147 Everything inside a voice should be voice-specific
+\, such as individual oscillators \, amplitude envelopes \, filters
+\, etc. Anything that affects all voices \, like global LFOs \, filters
+\, and FX \, should be taken care of outside of the voice patches.
+;
+#X obj 405 303 *~;
+#X obj 438 271 receive~ f;
+#X obj 633 136 r dur;
+#X obj 406 531 outlet~;
+#X obj 416 247 sig~;
+#X obj 396 368 blsaw;
+#X obj 668 283 sel 0;
+#X obj 703 414 vline~;
+#X text 722 315 zero velocity == noteoff;
+#X msg 731 364 0 \, 1 2;
+#X obj 666 361 pack 0 0;
+#X obj 772 279 r dur;
+#X obj 784 337 bang;
+#X obj 786 364 delay 10;
+#X msg 789 395 0;
+#X obj 656 328 delay 1;
+#X msg 620 334 0 1;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 1 0 2 0;
+#X connect 1 1 6 0;
+#X connect 1 1 9 0;
+#X connect 1 1 19 0;
+#X connect 2 0 17 0;
+#X connect 3 0 16 0;
+#X connect 9 0 8 0;
+#X connect 13 0 18 0;
+#X connect 14 0 13 1;
+#X connect 17 0 13 0;
+#X connect 18 0 3 0;
+#X connect 19 0 28 0;
+#X connect 19 0 29 0;
+#X connect 19 1 22 0;
+#X connect 19 1 25 0;
+#X connect 20 0 3 1;
+#X connect 22 0 20 0;
+#X connect 23 0 20 0;
+#X connect 24 0 23 1;
+#X connect 24 0 26 1;
+#X connect 25 0 26 0;
+#X connect 26 0 27 0;
+#X connect 27 0 23 0;
+#X connect 28 0 23 0;
+#X connect 29 0 20 0;

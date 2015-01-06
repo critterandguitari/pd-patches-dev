@@ -1,0 +1,18 @@
+#network={ 
+#    ssid="birds" 
+    #psk="rollieopus" 
+#    psk=281ffacecb948283768293cf6e6ce4945276ce2727d046d55622c7eeff62bc79 
+#}
+
+network={
+    ssid="birds2"
+    #psk="rollieopus"
+    psk=251e6576b5ea6b55378f7c45c08df9532c88a00040fa77a1933f1bba0e9a86fe
+}
+
+#network={
+#	ssid="offyellow"
+	#psk="M1^dT0urMOm3^t$"
+#	psk=d198610df8bd51ed2cb95159bd051415b1df939cf6d436c945da38d826602298
+#}
+

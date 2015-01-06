@@ -49,7 +49,7 @@ class Key:
         self.x1 = x0 + w
         self.y1 = y0 + h
         self.callback = callback
-        self.buttonid = canvas.create_rectangle(self.x0, self.y0, self.x1, self.y1, fill="yellow")
+        self.buttonid = canvas.create_rectangle(self.x0, self.y0, self.x1, self.y1, fill="#fb0")
         canvas.tag_bind(self.buttonid, '<Button-1>', self.onclick)   
         canvas.tag_bind(self.buttonid, '<ButtonRelease-1>', self.onrelease)
     

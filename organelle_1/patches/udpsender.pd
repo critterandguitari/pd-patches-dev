@@ -1,0 +1,36 @@
+#N canvas 521 479 534 622 10;
+#X msg 126 146 disconnect;
+#X floatatom 120 467 0 0 0 0 - - -;
+#X obj 120 440 netsend -u;
+#X text 201 97 UDP \, ascii;
+#X obj 231 356 pack 0 0 0 0;
+#X obj 289 132 vsl 15 128 0 1024 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 5600 1;
+#X obj 329 133 vsl 15 128 0 1024 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 8500 1;
+#X obj 362 135 vsl 15 128 0 1024 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 5900 1;
+#X obj 397 139 vsl 15 128 0 1024 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6000 1;
+#X msg 151 400 send knobs \$1 \$2 \$3 \$4;
+#X msg 126 121 connect 192.168.1.115 4567;
+#X obj 292 289 t b f;
+#X obj 340 289 t b f;
+#X obj 386 291 t b f;
+#X obj 290 471 print;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 4 0 9 0;
+#X connect 5 0 4 0;
+#X connect 6 0 11 0;
+#X connect 7 0 12 0;
+#X connect 8 0 13 0;
+#X connect 9 0 2 0;
+#X connect 9 0 14 0;
+#X connect 10 0 2 0;
+#X connect 11 0 4 0;
+#X connect 11 1 4 1;
+#X connect 12 0 4 0;
+#X connect 12 1 4 2;
+#X connect 13 0 4 0;
+#X connect 13 1 4 3;
